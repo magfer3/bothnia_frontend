@@ -1,8 +1,28 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Om</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Logga in</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Hjälp</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id = "logo">       
+      <img alt="Bothniabladet logo" src="./assets/Bothnia-logo.png" />
+    </div>
+    <div id="meny">
+      <router-link to="/about">Nyheter</router-link> |
+      <router-link to="/about">Lokalt</router-link> |
+      <router-link to="/home">Nöje</router-link> |
+      <router-link to="/home">Fritid</router-link> |
+      <router-link to="/about">Sport</router-link>
     </div>
     <router-view />
   </div>
@@ -18,7 +38,7 @@
 }
 
 #nav {
-  padding: 30px;
+  padding: 10px;
 
   a {
     font-weight: bold;
@@ -29,4 +49,10 @@
     }
   }
 }
+
+#menu {
+   padding: 10px;
+
+}
+
 </style>
