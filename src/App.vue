@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <header>
     <div id="nav">
       <ul class="nav justify-content-end">
         <li class="nav-item">
@@ -14,19 +15,31 @@
       </ul>
     </div>
 
-    <div id = "logo">       
-      <img alt="Bothniabladet logo" src="./assets/Bothnia-logo.png" />
-    </div>
-    <div id="meny">
-      <router-link to="/about">Nyheter</router-link> |
-      <router-link to="/about">Lokalt</router-link> |
-      <router-link to="/home">Nöje</router-link> |
-      <router-link to="/home">Fritid</router-link> |
-      <router-link to="/about">Sport</router-link>
-    </div>
+      <div id="logo">
+        <img alt="Bothniabladet logo" src="./assets/Bothnia-logo.png" />
+      </div>
+      <div id="meny">
+        <router-link to="/about">Nyheter</router-link> |
+        <router-link to="/about">Lokalt</router-link> |
+        <router-link to="/home">Nöje</router-link> |
+        <router-link to="/home">Fritid</router-link> |
+        <router-link to="/about">Sport</router-link>
+      </div>
+    </header>
     <router-view />
   </div>
 </template>
+
+<script>
+
+
+export default {
+
+
+
+}
+
+</script>
 
 <style lang="scss">
 #app {
@@ -51,8 +64,11 @@
 }
 
 #menu {
-   padding: 10px;
-
+  padding: 10px;
 }
 
+header {
+  background-color: white;
+
+}
 </style>

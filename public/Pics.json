@@ -1,0 +1,27 @@
+[
+{
+    "name": "Bild1",
+    "id": 1,
+    "img-src": "../assets/Bildserver/Bild1.jpg" 
+},
+{
+    "name": "Bild2",
+    "id": 2,
+    "img-src": "../assets/Bildserver/Bild2.jpg" 
+},
+{
+    "name": "Bild3",
+    "id": 3,
+    "img-src": "../assets/Bildserver/Bild3.jpg" 
+},
+{
+    "name": "Bild4",
+    "id": 4,
+    "img-src": "../assets/Bildserver/Bild4.jpg" 
+},
+{
+    "name": "Bild5",
+    "id": 5,
+    "img-src": "../assets/Bildserver/Bild25.jpg" 
+}
+]
