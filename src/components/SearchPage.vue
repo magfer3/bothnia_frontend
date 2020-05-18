@@ -1,0 +1,69 @@
+<template>
+  <div class="hello">
+    <div class="container">
+      <div class="row">
+        <div class="col-12"><h3>Sökresultat</h3></div>
+      </div>
+    </div>
+    <b-container>
+      <b-row align-v="center">
+        <PhotoContainer
+          v-for="pic in pics"
+          :key="pic.id"
+          :name="pic.name"
+          :imgsrc="pic.imgsrc"
+        ></PhotoContainer>
+      </b-row>
+    </b-container>
+  </div>
+</template>
+
+<script>
+import PhotoContainer from "@/components/PhotoContainer.vue";
+
+export default {
+  name: "HelloWorld",
+  props: {
+    msg: String
+  },
+  components: { PhotoContainer },
+  mounted() {
+    this.fetchData();
+  },
+  data() {
+    return {
+      pics: []
+    };
+  },
+  methods: {
+    async fetchData() {
+      const res = await fetch("pics.json");
+      const val = await res.json();
+      this.pics = val;
+    }
+  }
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+h3 {
+  margin: 40px 50px 0;
+  text-align: left;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+
+#hello {
+  text-align: left;
+}
+</style>

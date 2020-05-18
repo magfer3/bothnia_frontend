@@ -1,22 +1,24 @@
 <template>
   <div id="app">
     <header>
-    <div id="nav">
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Om</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Logga in</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Hjälp</a>
-        </li>
-      </ul>
-    </div>
+      <div id="nav">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Om</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Logga in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Hjälp</a>
+          </li>
+        </ul>
+      </div>
 
       <div id="logo">
-        <img alt="Bothniabladet logo" src="./assets/Bothnia-logo.png" />
+        <a class="navbar-brand" href="/">
+          <img alt="Bothniabladet logo" src="./assets/Bothnia-logo.png" />
+        </a>
       </div>
       <div id="meny">
         <router-link to="/about">Nyheter</router-link> |
@@ -25,20 +27,16 @@
         <router-link to="/home">Fritid</router-link> |
         <router-link to="/about">Sport</router-link>
       </div>
+      <div id="searchbar">
+        <router-link to="/search">Sök</router-link>
+      </div>
     </header>
     <router-view />
   </div>
 </template>
 
 <script>
-
-
-export default {
-
-
-
-}
-
+export default {};
 </script>
 
 <style lang="scss">
@@ -69,6 +67,5 @@ export default {
 
 header {
   background-color: white;
-
 }
 </style>
