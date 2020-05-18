@@ -2,22 +2,32 @@
   <div class="hello">
     <div class="container">
       <div class="row">
+        <div class="col-12"><h3>Senaste nytt</h3></div>
+      </div>
+    </div>
+    <b-container>
+      <b-row align-v="center">
+        <PhotoContainer
+          v-for="pic in pics"
+          :key="pic.id"
+          :name="pic.name"
+          :imgsrc="pic.imgsrc"
+        ></PhotoContainer>
+      </b-row>
+    </b-container>
+    <div class="container">
+      <div class="row">
         <div class="col-12"><h3>Populärt</h3></div>
       </div>
     </div>
     <b-container>
       <b-row align-v="center">
         <PhotoContainer
-          name="Magdalena"
-          imgsrc="../assets/Bildserver/Bild4.jpg"
+          v-for="pic in pics"
+          :key="pic.id"
+          :name="pic.name"
+          :imgsrc="pic.imgsrc"
         ></PhotoContainer>
-        <p>{{  }}</p>
-        <PhotoContainer />
-        <PhotoContainer />
-        <PhotoContainer />
-        <PhotoContainer />
-        <PhotoContainer />
-        <PhotoContainer />
       </b-row>
     </b-container>
   </div>
@@ -31,21 +41,20 @@ export default {
   props: {
     msg: String
   },
-  components: { PhotoContainer: PhotoContainer },
+  components: { PhotoContainer },
   mounted() {
     this.fetchData();
   },
   data() {
     return {
-      Pics: []
+      pics: []
     };
   },
   methods: {
     async fetchData() {
-      const res = await fetch("Pics.json");
+      const res = await fetch("pics.json");
       const val = await res.json();
-      console.log(val);
-
+      this.pics = val;
     }
   }
 };
