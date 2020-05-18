@@ -4,7 +4,7 @@
       <div id="nav">
         <ul class="nav justify-content-end">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Om</a>
+            <a class="nav-link active" href="/about">Om</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Logga in</a>
@@ -17,15 +17,19 @@
 
       <div id="logo">
         <a class="navbar-brand" href="/">
-          <img alt="Bothniabladet logo" src="./assets/Bothnia-logo.png" />
+          <img
+            alt="Bothniabladet logo"
+            src="./assets/Bothnia-logo.png"
+            class="img-fluid"
+          />
         </a>
       </div>
       <div id="meny">
-        <router-link to="/about">Nyheter</router-link> |
-        <router-link to="/about">Lokalt</router-link> |
-        <router-link to="/home">Nöje</router-link> |
-        <router-link to="/home">Fritid</router-link> |
-        <router-link to="/about">Sport</router-link>
+        <router-link to="/">Nyheter</router-link> |
+        <router-link to="/">Lokalt</router-link> |
+        <router-link to="/">Nöje</router-link> |
+        <router-link to="/">Fritid</router-link> |
+        <router-link to="/">Sport</router-link>
       </div>
       <div id="searchbar">
         <router-link to="/search">Sök</router-link>
