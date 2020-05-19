@@ -32,7 +32,32 @@
         <router-link to="/">Sport</router-link>
       </div>
       <div id="searchbar">
-        <router-link to="/search">Sök</router-link>
+        <div class="container">
+          <br />
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <div class="card-body row no-gutters align-items-center">
+                  <div class="col-auto">
+                    <i class="fas fa-search h4 text-body"></i>
+                  </div>
+                  <!--end of col-->
+                  <div class="col">
+                    <input
+                      class="form-control form-control-lg form-control-borderless"
+                      type="search"
+                      placeholder="Search topics or keywords"
+                    />
+                  </div>
+                  <!--end of col-->
+                  <div class="col-auto">
+                    <router-link to="/search" tag="button" class="btn btn-lg btn-success">Search</router-link>
+                  </div>
+                  <!--end of col-->
+                </div>
+            </div>
+            <!--end of col-->
+          </div>
+        </div>
       </div>
     </header>
     <router-view />
@@ -72,4 +97,10 @@ export default {};
 header {
   background-color: white;
 }
+
+.btn {
+  background-color: grey;
+  border: white;
+}
+
 </style>
