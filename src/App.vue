@@ -26,7 +26,6 @@
           </li>
         </ul>
       </div>
-
       <div id="logo">
         <a class="navbar-brand" href="/">
           <img
@@ -43,38 +42,8 @@
         <router-link to="/">Fritid</router-link> |
         <router-link to="/">Sport</router-link>
       </div>
-      <div id="searchbar">
-        <div class="container">
-          <br />
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
-              <div class="card-body row no-gutters align-items-center">
-                <div class="col-auto">
-                  <i class="fas fa-search h4 text-body"></i>
-                </div>
-                <!--end of col-->
-                <div class="col">
-                  <input
-                    class="form-control form-control-md form-control-borderless"
-                    type="search"
-                    placeholder="Sök bilder på nyckelord"
-                  />
-                </div>
-                <!--end of col-->
-                <div class="col-auto">
-                  <router-link
-                    to="/search"
-                    tag="button"
-                    class="btn btn-md btn-secondary"
-                    >Search</router-link
-                  >
-                </div>
-                <!--end of col-->
-              </div>
-            </div>
-            <!--end of col-->
-          </div>
-        </div>
+            <div>
+        <SearchBar></SearchBar>
       </div>
       <!--Modal: Login / Register Form-->
       <div
@@ -265,7 +234,19 @@
 </template>
 
 <script>
-export default {};
+import Vue from "vue";
+import SearchBar from "./components/SearchBar";
+Vue.component("SearchBar", SearchBar);
+export default {
+  // components: {
+  //    "SearchBar": SearchBar
+  // },
+  data(){
+    return{
+
+    }
+  }
+};
 </script>
 
 <style lang="scss">
