@@ -33,25 +33,22 @@
       aria-labelledby="exampleModalCenterTitle"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Information</h5>
+          <b-tabs content-class="mt-3">
+            <b-tab title="Beskrivning" active><p>Beskrivning</p></b-tab>
+            <b-tab title="Specifikation"><p>Specifikation</p></b-tab>
+            <b-tab title="Nyckelord"><p>Nyckelord</p></b-tab>
+            <b-tab title="Publikationer"><p>Publikationer</p></b-tab>
+            <b-tab title="Versioner"><p>Versioner</p></b-tab>
+          </b-tabs>
+          <div class="modal-footer">
             <button
               type="button"
-              class="close"
+              class="btn btn-outline-info waves-effect ml-auto"
               data-dismiss="modal"
-              aria-label="Close"
             >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">
-              Stäng
+              Close
             </button>
           </div>
         </div>
