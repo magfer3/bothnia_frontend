@@ -42,7 +42,7 @@
         <router-link to="/">Fritid</router-link> |
         <router-link to="/">Sport</router-link>
       </div>
-            <div>
+      <div>
         <SearchBar></SearchBar>
       </div>
       <!--Modal: Login / Register Form-->
@@ -241,10 +241,10 @@ export default {
   // components: {
   //    "SearchBar": SearchBar
   // },
-  data(){
-    return{
-
-    }
+  data() {
+    return {
+      modalID: ""
+    };
   }
 };
 </script>
