@@ -2,8 +2,8 @@
   <div>
     <b-col>
       <b-card
-        :title="name"
-        :img-src="imgsrc"
+        :title="oportunityDescription"
+        :img-src="locationOnDisc"
         img-alt="Image"
         img-top
         tag="article"
@@ -34,12 +34,37 @@ import PopUpInfo from "@/components/PhotoPopUpInfo.vue";
 
 export default {
   name: "PhotoContainer",
-  props: ["name", "imgsrc"],
+  props: [
+    "aquiredThrough",
+    "camera",
+    "coordinates",
+    "datetime",
+    "fName",
+    "fileFormat",
+    "fileSize",
+    "height",
+    "keywords",
+    "lName",
+    "locationOnDisc",
+    "maxUse",
+    "oportunityDescription",
+    "original",
+    "photoDescription",
+    "piNo",
+    "price",
+    "publishings",
+    "resolution",
+    "used",
+    "width"
+  ],
   components: { PopUpInfo },
   computed: {
     modalId() {
       return `modal-${this.id}`;
     }
+  },
+  data: function() {
+    return {};
   }
 };
 </script>
