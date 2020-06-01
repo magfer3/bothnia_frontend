@@ -7,12 +7,7 @@
     </div>
     <b-container>
       <b-row align-v="center">
-        <PhotoContainer
-          v-for="pic in pics"
-          :key="pic.id"
-          :name="pic.name"
-          :imgsrc="pic.imgsrc"
-        ></PhotoContainer>
+        <PhotoContainer v-bind="pics"></PhotoContainer>
       </b-row>
     </b-container>
   </div>
@@ -37,7 +32,7 @@ export default {
   },
   methods: {
     async fetchData() {
-      const res = await fetch("pics.json");
+      const res = await fetch("http://localhost:8080/BothniaBackEnd/resources/picture?id=1");
       const val = await res.json();
       this.pics = val;
     }

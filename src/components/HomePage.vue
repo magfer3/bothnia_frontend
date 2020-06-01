@@ -2,7 +2,7 @@
   <div class="hello">
     <div class="container">
       <div class="row">
-        <div class="col-12"><h3>Senaste nytt</h3></div>
+        <div class="col-12"><h3>Populärt</h3></div>
       </div>
     </div>
     <b-container>
@@ -12,7 +12,7 @@
     </b-container>
     <div class="container">
       <div class="row">
-        <div class="col-12"><h3>Populärt</h3></div>
+        <div class="col-12"><h3>Senaste nytt</h3></div>
       </div>
     </div>
     <b-container>
