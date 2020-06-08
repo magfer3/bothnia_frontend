@@ -14,7 +14,10 @@ const routes = [
   {
     path: "/search",
     name: "Search",
-    component: Search
+    component: Search,
+    props(route) {
+      return { prop: route.query.prop };
+    }
   },
   {
     path: "/about",
@@ -31,6 +34,10 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes
+});
+
+router.beforeEach((to, from, next) => {
+  next();
 });
 
 export default router;

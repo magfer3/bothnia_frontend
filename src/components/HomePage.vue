@@ -7,7 +7,12 @@
     </div>
     <b-container>
       <b-row align-v="center">
-        <PhotoContainer v-bind="pics"></PhotoContainer>
+        <PhotoContainer
+          v-for="pic in pics"
+          :key="pic.piNo"
+          :piNo="pic.piNo"
+          :locationOnDisc="pic.locationOnDisc"
+          ></PhotoContainer>
       </b-row>
     </b-container>
     <div class="container">
@@ -17,7 +22,12 @@
     </div>
     <b-container>
       <b-row align-v="center">
-        <PhotoContainer v-bind="pics"></PhotoContainer>
+        <PhotoContainer
+          v-for="pic in pics"
+          :key="pic.piNo"
+          :piNo="pic.piNo"
+          :locationOnDisc="pic.locationOnDisc"
+        ></PhotoContainer>
       </b-row>
     </b-container>
   </div>
@@ -43,7 +53,7 @@ export default {
   methods: {
     async fetchData() {
       const res = await fetch(
-        "http://localhost:8080/BothniaBackEnd/resources/picture?id=1"
+        "http://localhost:8080/BothniaBackEnd/resources/picture/pictures?search=djur"
       );
       const val = await res.json();
       this.pics = val;

@@ -14,11 +14,17 @@
                 class="form-control form-control-md form-control-borderless"
                 type="search"
                 placeholder="Sök bilder på nyckelord"
+                v-model="searchString"
               />
             </div>
             <!--end of col-->
             <div class="col-auto">
-              <router-link to="/search" tag="button" class="btn btn-md btn-secondary">Search</router-link>
+              <router-link
+                :to="{ path: '/search', query: { prop: searchString } }"
+                tag="button"
+                class="btn btn-md btn-secondary"
+                >Search</router-link
+              >
             </div>
             <!--end of col-->
           </div>
@@ -30,4 +36,12 @@
 </template>
 
 <script>
+export default {
+  name: "SearchBar",
+  data: function() {
+    return {
+      searchString: ""
+    };
+  }
+};
 </script>

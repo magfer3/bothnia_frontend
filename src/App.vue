@@ -238,13 +238,13 @@ import Vue from "vue";
 import SearchBar from "./components/SearchBar";
 Vue.component("SearchBar", SearchBar);
 export default {
-  // components: {
-  //    "SearchBar": SearchBar
-  // },
+  computed: {
+    modalId() {
+      return `modal-${this.id}`;
+    }
+  },
   data() {
-    return {
-      modalID: ""
-    };
+    return{}
   }
 };
 </script>

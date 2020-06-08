@@ -7,7 +7,12 @@
     </div>
     <b-container>
       <b-row align-v="center">
-        <PhotoContainer v-bind="pics"></PhotoContainer>
+        <PhotoContainer
+          v-for="pic in pics"
+          :key="pic.piNo"
+          :piNo="pic.piNo"
+          :locationOnDisc="pic.locationOnDisc"
+        ></PhotoContainer>
       </b-row>
     </b-container>
   </div>
@@ -17,26 +22,41 @@
 import PhotoContainer from "@/components/PhotoContainer.vue";
 
 export default {
-  name: "HelloWorld",
-  props: {
-    msg: String
-  },
+  name: "SearchPage",
   components: { PhotoContainer },
-  mounted() {
+  created() {
     this.fetchData();
   },
   data() {
     return {
-      pics: []
+      pics: [],
+      searchText: ""
     };
   },
+  watch: {
+    '$route': 'fetchData'
+  },
   methods: {
+    getSearchText(searchText) {
+      return searchText;
+    },
     async fetchData() {
-      const res = await fetch("http://localhost:8080/BothniaBackEnd/resources/picture?id=1");
+      this.searchText = this.getSearchText(this.$route.query.prop);
+      const res = await fetch(
+        "http://localhost:8080/BothniaBackEnd/resources/picture/pictures?search=" +
+          this.searchText
+      );
       const val = await res.json();
       this.pics = val;
     }
   }
+  // beforeRouteUpdate(to, from, next) {
+  //   // console.log('Reusing this component.')
+  //   this.searchText = this.getsearchText(this.$route.query.prop);
+  //   // console.log('Entering User', to.params.userId)
+  //   console.log(this.searchText);
+  //   next();
+  // }
 };
 </script>
 
