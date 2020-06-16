@@ -50,13 +50,6 @@ export default {
       this.pics = val;
     }
   }
-  // beforeRouteUpdate(to, from, next) {
-  //   // console.log('Reusing this component.')
-  //   this.searchText = this.getsearchText(this.$route.query.prop);
-  //   // console.log('Entering User', to.params.userId)
-  //   console.log(this.searchText);
-  //   next();
-  // }
 };
 </script>
 

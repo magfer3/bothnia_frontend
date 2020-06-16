@@ -12,15 +12,18 @@
         <b-button
           v-b-tooltip.hover
           title="Bildinformation"
-          v-b-modal="modalId"
           variant="primary"
           data-toggle="modal"
-          data-target="#exampleModalCenter"
+          :data-target="modalTarget"
           >Info</b-button
         >
       </b-card>
     </b-col>
-    <PopUpInfo :piNo="piNo" :locationOnDisc="locationOnDisc"></PopUpInfo>
+    <PopUpInfo
+      :id="modalId"
+      :piNo="piNo"
+      :locationOnDisc="locationOnDisc"
+    ></PopUpInfo>
   </div>
 </template>
 
@@ -33,7 +36,10 @@ export default {
   components: { PopUpInfo },
   computed: {
     modalId() {
-      return `modal-${this.id}`;
+      return `modal-${this.piNo}`;
+    },
+    modalTarget() {
+      return `#modal-${this.piNo}`;
     }
   },
   data: function() {

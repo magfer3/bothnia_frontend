@@ -2,7 +2,7 @@
   <div>
     <div
       class="modal fade"
-      id="exampleModalCenter"
+      :id="modalId"
       tabindex="-1"
       role="dialog"
       aria-labelledby="exampleModalCenterTitle"
@@ -20,7 +20,7 @@
             <b-tab title="Specifikation"
               ><ul>
                 <li>Fotograf: {{ pic.fName }} {{ pic.lName }}</li>
-                <li>Format:</li>
+                <li>Format: {{ pic.fileFormat }}</li>
                 <li>Version av formatet:</li>
                 <li>Bredd:</li>
                 <li>Höjd:</li>
@@ -57,11 +57,11 @@ export default {
     this.fetchData();
   },
   name: "PopUpInfo",
-  props: ["piNo", "locationOnDisc"],
+  props: ["id", "piNo", "locationOnDisc"],
   computed: {
     modalId() {
-      return `modal-${this.id}`;
-    },
+      return `modal-${this.piNo}`;
+    }
   },
   data() {
     return {
@@ -71,7 +71,8 @@ export default {
   methods: {
     async fetchData() {
       const res = await fetch(
-        "http://localhost:8080/BothniaBackEnd/resources/picture?id=1"
+        // eslint-disable-next-line no-undef
+        `http://localhost:8080/BothniaBackEnd/resources/picture?id=${this.piNo}`
       );
       const val = await res.json();
       this.pic = val;
