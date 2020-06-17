@@ -8,7 +8,7 @@
     <b-container>
       <b-row align-v="center">
         <PhotoContainer
-          v-for="pic in pics"
+          v-for="pic in picsPopular"
           :key="pic.piNo"
           :piNo="pic.piNo"
           :locationOnDisc="pic.locationOnDisc"
@@ -23,7 +23,7 @@
     <b-container>
       <b-row align-v="center">
         <PhotoContainer
-          v-for="pic in pics"
+          v-for="pic in picsRecent"
           :key="pic.piNo"
           :piNo="pic.piNo"
           :locationOnDisc="pic.locationOnDisc"
@@ -37,26 +37,35 @@
 import PhotoContainer from "@/components/PhotoContainer.vue";
 
 export default {
-  name: "HelloWorld",
+  name: "HomePage",
   props: {
     msg: String
   },
   components: { PhotoContainer },
   mounted() {
-    this.fetchData();
+    this.fetchDataPopular();
+    this.fetchDataRecent();
   },
   data() {
     return {
-      pics: []
+      picsRecent: [],
+      picsPopular: []
     };
   },
   methods: {
-    async fetchData() {
-      const res = await fetch(
+    async fetchDataPopular() {
+      var res = await fetch(
         "http://localhost:8080/BothniaBackEnd/resources/picture/pictures?search=djur"
       );
-      const val = await res.json();
-      this.pics = val;
+      var val = await res.json();
+      this.picsPopular = val;
+    },
+    async fetchDataRecent() {
+      var res = await fetch(
+        "http://localhost:8080/BothniaBackEnd/resources/picture/pictures?search=sport"
+      );
+      var val = await res.json();
+      this.picsRecent = val;
     }
   }
 };

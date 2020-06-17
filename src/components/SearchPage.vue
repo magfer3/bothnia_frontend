@@ -38,7 +38,11 @@ export default {
   },
   methods: {
     getSearchText(searchText) {
-      return searchText;
+      var searchTextArr = searchText.split(" ");
+      console.log(searchTextArr);
+      var searchTextString = searchTextArr.join('_');
+      console.log(searchTextString);
+      return searchTextString;
     },
     async fetchData() {
       this.searchText = this.getSearchText(this.$route.query.prop);
