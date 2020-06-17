@@ -33,6 +33,7 @@
                 <li>GPS-koordinater: {{ pic.coordinates }}</li>
                 <li>Redigerad/Ej redigerad:</li>
                 <li>Originalbild:</li>
+                <li>Använd antal gånger: {{ pic.used }} av {{ pic.maxUse }}</li>
               </ul>
               </p>
             </b-tab>
@@ -44,7 +45,15 @@
                 </li>
                 </ul>
                 </p></b-tab>
-            <b-tab title="Publikationer"><p>Publikationer</p></b-tab>
+            <b-tab title="Publikationer"><p>Publikationer</p>
+            <!-- <p>
+              <ul>
+                <li>
+                  {{ pic.keywords.join(', ') }}
+                </li>
+                </ul>
+                </p> -->
+            </b-tab>
             <b-tab title="Versioner"><p>Versioner</p></b-tab>
           </b-tabs>
           <div class="modal-footer">
