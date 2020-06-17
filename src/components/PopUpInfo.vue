@@ -15,24 +15,35 @@
           <b-tabs content-class="mt-3">
             <div class="modal-body"></div>
             <b-tab title="Beskrivning" active>
-              <p>{{ pic.oportunityDescription }}</p></b-tab
+              <p>{{ pic.oportunityDescription }}</p>
+              <p>{{ pic.photoDescription }}</p></b-tab
             >
             <b-tab title="Specifikation"
-              ><ul>
+              >
+              <p>
+              <ul>
                 <li>Fotograf: {{ pic.fName }} {{ pic.lName }}</li>
                 <li>Format: {{ pic.fileFormat }}</li>
                 <li>Version av formatet:</li>
-                <li>Bredd:</li>
-                <li>Höjd:</li>
-                <li>Filstorlek:</li>
-                <li>Upplösning:</li>
-                <li>Kamera:</li>
-                <li>GPS-koordinater:</li>
+                <li>Bredd: {{ pic.width }}</li>
+                <li>Höjd: {{ pic.height }}</li>
+                <li>Filstorlek: {{ pic.fileSize }}</li>
+                <li>Upplösning: {{ pic.resolution }}</li>
+                <li>Kamera: {{ pic.camera }}</li>
+                <li>GPS-koordinater: {{ pic.coordinates }}</li>
                 <li>Redigerad/Ej redigerad:</li>
                 <li>Originalbild:</li>
               </ul>
+              </p>
             </b-tab>
-            <b-tab title="Nyckelord"><p>Nyckelord</p></b-tab>
+            <b-tab title="Nyckelord">
+              <p>
+              <ul>
+                <li>
+                  {{ pic.keywords.join(', ') }}
+                </li>
+                </ul>
+                </p></b-tab>
             <b-tab title="Publikationer"><p>Publikationer</p></b-tab>
             <b-tab title="Versioner"><p>Versioner</p></b-tab>
           </b-tabs>
