@@ -55,14 +55,14 @@ export default {
   methods: {
     async fetchDataPopular() {
       var res = await fetch(
-        "http://localhost:8080/BothniaBackEnd/resources/picture/pictures?search=djur"
+        "http://localhost:8080/BothniaBackEnd/resources/picture/pictures?search=popular"
       );
       var val = await res.json();
       this.picsPopular = val;
     },
     async fetchDataRecent() {
       var res = await fetch(
-        "http://localhost:8080/BothniaBackEnd/resources/picture/pictures?search=sport"
+        "http://localhost:8080/BothniaBackEnd/resources/picture/pictures?search=recent"
       );
       var val = await res.json();
       this.picsRecent = val;
